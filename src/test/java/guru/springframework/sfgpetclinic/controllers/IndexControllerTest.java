@@ -1,8 +1,11 @@
 package guru.springframework.sfgpetclinic.controllers;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -29,5 +32,25 @@ class IndexControllerTest {
     void oopsHandler() {
         assertThrows(ValueNotFoundException.class,
                 () -> indexController.oopsHandler());
+    }
+
+    @Disabled("Demo of Timeout")
+    @Test
+    void testTimeout() {
+        // Runs in the same thread, so after execution, time is compared if it took more than the given one. So this runs completely and then compares time
+        assertTimeout(Duration.ofMillis(100),() -> {
+            Thread.sleep(5000);
+                    System.out.println("I got here");
+        });
+    }
+
+    @Disabled("Demo of Timeout")
+    @Test
+    void testTimeoutPreempt() {
+        // Runs in a separate thread and when the given duration is passed, the thread is killed preemptively and hence does not allow the test to run fully if it exceeds the time limit.
+        assertTimeoutPreemptively(Duration.ofMillis(100),() -> {
+            Thread.sleep(5000);
+            System.out.println("I got here");
+        });
     }
 }
