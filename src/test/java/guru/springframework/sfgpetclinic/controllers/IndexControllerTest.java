@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 
 class IndexControllerTest {
@@ -52,5 +53,16 @@ class IndexControllerTest {
             Thread.sleep(5000);
             System.out.println("I got here");
         });
+    }
+
+    @Disabled(value = "Failing assumption can be seen as aborted / skipped")
+    @Test
+    void testAssumption() {
+        assumeTrue("GURU".equalsIgnoreCase(System.getenv("GURU_RUNTIME")));
+    }
+
+    @Test
+    void testAssumptionIsTrue() {
+        assumeTrue("GURU".equalsIgnoreCase("GURU"));
     }
 }
