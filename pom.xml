@@ -18,9 +18,9 @@
 
     <developers>
         <developer>
-            <id>jt</id>
-            <name>John Thompson</name>
-            <email>john@springframework.guru</email>
+            <id>mayank</id>
+            <name>Mayank Pant</name>
+            <email>mayankpant.dev@gmail.com</email>
         </developer>
     </developers>
 
@@ -56,6 +56,12 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-platform.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
             <version>${junit-platform.version}</version>
             <scope>test</scope>
         </dependency>
