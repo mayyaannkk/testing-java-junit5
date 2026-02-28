@@ -3,11 +3,13 @@ package guru.springframework.sfgpetclinic.services.springdatajpa;
 import guru.springframework.sfgpetclinic.model.Owner;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @Disabled(value = "Disabled until we learn Mocking")
+@Tag("service")
 class OwnerSDJpaServiceTest {
 
     OwnerSDJpaService ownerSDJpaService;

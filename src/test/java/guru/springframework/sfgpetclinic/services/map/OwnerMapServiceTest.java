@@ -4,16 +4,14 @@ import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.model.PetType;
 import guru.springframework.sfgpetclinic.services.PetService;
 import guru.springframework.sfgpetclinic.services.PetTypeService;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 // These nested tests allows us to follow a flow. Here we save a pet type then use nested tests to check if it was saved or not. Similarly for owner as well
 
 @DisplayName("Owner Map Service Test -")
+@Tag("service")
 class OwnerMapServiceTest {
 
     OwnerMapService ownerMapService;
